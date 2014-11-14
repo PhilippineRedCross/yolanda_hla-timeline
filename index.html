@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Haiyan Recovery: Household Livelihood Assistance</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/nv.d3.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+      body {
+        background: #f5f5f5;
+        margin-top: 10px;
+      }
+
+      text {
+        font: 12px sans-serif;
+      }
+
+      .logo-prc{
+        height: 60px;
+        margin-right: 20px; 
+      }
+      .logo-ifrc{
+        height:60px;
+        background: #fff;
+        margin-bottom: 15px;
+      }
+      .btn-donor {
+        background-color: #C4DFF6;
+        margin-bottom: 5px;
+        margin-right: 3px;
+      }
+      .btn-donor:focus {
+        outline:0;
+        color: black;
+      }
+      .btn-donor:hover,
+      .btn-donor.filtering {
+        background-color: #56A0D3;  
+        outline: 0;
+        color:#f5f5f5; 
+      }
+      .spacer{
+        height: 20px;
+      }
+
+
+    </style>
+  </head>
+  <body class='with-3d-shadow with-transitions'>
+  <div class="container">
+      <div style="margin-bottom:25px;">
+        <img src="img/PRC-logo.png" class="pull-left logo-prc">
+        <h3>Haiyan Recovery</h3>
+        <h4>Household Livelihood Assistance Grants</h4>
+      </div>
+
+    <button type="button" onClick="resetFilters();" class="btn btn-default btn-xs">Reset <span class="glyphicon glyphicon-refresh"></span></button>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+          Select a Province <span class="caret"></span>
+        </button>
+        <ul id="dropdown-menu-province" class="dropdown-menu" role="menu"></ul>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+          Select a Municipality <span class="caret"></span>
+        </button>
+        <ul id="dropdown-menu-municipality" class="dropdown-menu" role="menu">
+          <li class="disabled"><a role="menuitem" href="#">First select a province</a></li>
+        </ul>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+          Select a Barangay <span class="caret"></span>
+        </button>
+        <ul id="dropdown-menu-barangay" class="dropdown-menu" role="menu">
+          <li class="disabled"><a role="menuitem" href="#">First select a municipality</a></li>
+        </ul>
+      </div>
+
+      <p><h6>
+        <b>Cooperating partners:</b>
+        <span id="partnerButtons" style="padding-left:10px;"></span>
+      </h6></p>
+
+      <hr>
+    
+    
+    <div class="nav-admin">
+        <h4 class="nav-text">
+          <span id="selected-admin-label">All areas</span>
+          <span id="selected-partner-label"> - All cooperating partners</span> 
+        </h4>
+      </div> 
+
+  
+    <div>
+      <svg id="chart1"></svg>
+    </div>
+
+    <hr>
+
+    
+
+      <div class="spacer"></div>
+      <img src="img/IFRC_cobranding.png" class="pull-right logo-ifrc">
+
+
+
+    </div> <!-- /container -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/nv.d3.min.js"></script>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
